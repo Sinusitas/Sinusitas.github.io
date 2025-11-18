@@ -1,0 +1,754 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #e63946; /* ryškiai raudona */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+  border-bottom: 4px solid #e63946;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1d3557; /* tamsiai mėlyna */
+  border-left: 5px solid #1d3557;
+  padding-left: 10px;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #457b9d; /* šviesesnė mėlyna */
+  text-transform: none;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  background-color: #457b9d;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+h5 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px dashed #aaa;
+  display: inline-block;
+}
+
+h6 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #999;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+/* =========================
+   A. Mygtukų stiliai
+   ========================= */
+
+/* Pagrindinis mygtuko stilius */
+button,
+.btn {
+  background-color: #1d3557; /* tamsiai mėlyna */
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+/* Užvedus pelę */
+button:hover,
+.btn:hover {
+  background-color: #e63946; /* ryškiai raudona */
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(230,57,70,0.4);
+}
+
+/* Paspaudus (aktyvi būsena) */
+button:active,
+.btn:active {
+  background-color: #a4161a;
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Kai mygtukas išjungtas */
+button:disabled,
+.btn:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+/* Pagrindinė nuoroda */
+a {
+  color: #1d3557; /* mėlyna */
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Linija po nuoroda, kuri animuojasi */
+a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #e63946;
+  transition: width 0.3s ease;
+}
+
+/* Užvedus pelę – spalva keičiasi ir linija išsiplečia */
+a:hover {
+  color: #e63946;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Aktyvi nuoroda (pvz. paspaudus ar pasirinkus meniu punktą) */
+a:active {
+  color: #a4161a;
+}
+
+/* Aplankyta nuoroda – kitokia spalva */
+a:visited {
+  color: #555;
+}
+
+/* Vienodas tarpas aplink sekcijas (Apie, Reziumė, Portfolio ir pan.) */
+section {
+  padding: 80px 0; /* viršuje ir apačioje po 80px */
+  margin-bottom: 60px; /* tarpas tarp sekcijų */
+}
+
+/* Visų sekcijų vidinis turinys bus ribotas ir centruotas */
+section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Vienodas stilius turinio blokams kiekvienoje sekcijoje */
+.about .container,
+.resume .container,
+.portfolio .container {
+  background-color: #1e1e2f;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  padding: 40px;
+  transition: all 0.3s ease;
+}
+
+/* Užvedus pelę – lengvas pakilimo efektas */
+.about .container:hover,
+.resume .container:hover,
+.portfolio .container:hover {
+  background-color:#2b2b3e;
+    transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   PAPILDOMI TARPŲ IR TEKSTO PAGERINIMAI
+   ========================= */
+
+/* Tarpas tarp antraštės ir turinio sekcijoje */
+.section-title {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Sekcijų pavadinimai */
+.section-title h2 {
+  font-size: 2.2rem;
+  color: #1d3557;
+  position: relative;
+}
+
+/* Dekoratyvinė linija po sekcijos pavadinimu */
+.section-title h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #e63946;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+/* =========================
+   1. NAVIGACIJOS JUOSTA
+   ========================= */
+
+/* Navigacijos juosta – tamsesnis fonas ir šviesesnis tekstas */
+.navbar {
+  background-color: #0d1b2a !important; /* tamsiai mėlynas fonas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+
+/* Užvedus pelę ant nuorodų – švelnus švytėjimas */
+.navbar a {
+  color: #f1f1f1 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffb703 !important;
+  text-shadow: 0 0 10px #ffb703;
+}
+
+/* Kai navigacija „sticky“ – šiek tiek permatoma */
+.navbar.scrolled {
+  background-color: rgba(13, 27, 42, 0.95) !important;
+}
+
+/* =========================
+   2. „Į VIRŠŲ“ MYGTUKAS
+   ========================= */
+
+.back-to-top {
+  background: linear-gradient(135deg, #ff7b00, #ffb703);
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* Užvedus pelę – efektas */
+.back-to-top:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(255, 123, 0, 0.6);
+}
+
+/* Ikona viduje – šiek tiek didesnė */
+.back-to-top i {
+  font-size: 22px;
+}
+
+/* =========================
+   Papildomai – aktyvi navigacijos nuoroda
+   ========================= */
+.navbar .active {
+  color: #ffb703 !important;
+  border-bottom: 2px solid #ffb703;
+  padding-bottom: 5px;
+}
+/* =========================
+   SERVICES TABLE STYLE
+   ========================= */
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e1e2f;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* Antraštinė eilutė */
+.services-table thead {
+  background-color: #ff7b00;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.services-table th {
+  padding: 15px;
+}
+
+/* Lentelės eilutės */
+.services-table td {
+  padding: 15px;
+  vertical-align: middle;
+}
+
+/* Zebra stilius */
+.services-table tr:nth-child(even) {
+  background-color: #2b2b3e;
+}
+
+/* Hover efektas */
+.services-table tbody tr:hover {
+  background-color: #ffb703;
+  color: #000;
+  transition: background-color 0.3s;
+}
+
+/* Kainos stulpelis – pabrėžtas */
+.services-table td:nth-child(3) {
+  font-weight: 600;
+  color: #ffd166;
+}
+/* Navigacijos meniu baziniai stiliai */
+.navmenu {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    padding: 15px 0;
+    margin: 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.navmenu > ul > li {
+    position: relative;
+    margin: 2px 15px;
+}
+
+.navmenu > ul > li:first-child {
+    margin-top: 0;
+}
+
+.navmenu > ul > li:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagrindiniai nuorodų stiliai */
+.navmenu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navmenu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.navmenu a:hover::before {
+    left: 100%;
+}
+
+.navmenu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navmenu a.active {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+}
+
+.navicon {
+    margin-right: 12px;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Dropdown stiliai */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a .toggle-dropdown {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    font-size: 12px;
+}
+
+.dropdown:hover > a .toggle-dropdown {
+    transform: rotate(180deg);
+}
+
+.dropdown > ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    margin-left: 5px;
+}
+
+.dropdown:hover > ul {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown .dropdown > ul {
+    top: 0;
+    left: 100%;
+    margin-top: -8px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dropdown viduje esančių elementų stiliai */
+.dropdown ul li {
+    margin: 0;
+}
+
+.dropdown ul a {
+    color: #333;
+    border-radius: 0;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown ul a:hover {
+    background: #667eea;
+    color: white;
+    transform: none;
+}
+
+.dropdown ul li:last-child a {
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.dropdown ul li:first-child a {
+    border-radius: 8px 8px 0 0;
+}
+
+/* Atnaujinti sąrašų stiliai su pseudo-elementais */
+.navmenu ul {
+    counter-reset: menu-counter;
+}
+
+.navmenu > ul > li {
+    counter-increment: menu-counter;
+}
+
+.navmenu > ul > li > a::after {
+    content: counter(menu-counter);
+    position: absolute;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Nenumeruotų sąrašų pseudo-elementai */
+.dropdown ul {
+    counter-reset: dropdown-counter;
+}
+
+.dropdown ul > li {
+    counter-increment: dropdown-counter;
+    position: relative;
+}
+
+.dropdown ul > li > a::before {
+    content: "›";
+    margin-right: 8px;
+    color: #667eea;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.dropdown ul > li > a:hover::before {
+    transform: translateX(3px);
+    color: white;
+}
+
+/* Deep dropdown specifiniai stiliai */
+.dropdown .dropdown ul > li > a::before {
+    content: "»";
+    color: #764ba2;
+}
+
+.dropdown .dropdown ul > li > a:hover::before {
+    color: white;
+}
+
+/* Responsive dizainas */
+@media (min-width: 768px) {
+    .navmenu ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .navmenu > ul > li {
+        margin: 0 5px;
+        flex: 1;
+        max-width: 200px;
+    }
+    
+    .dropdown > ul {
+        top: 100%;
+        left: 0;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    .dropdown .dropdown > ul {
+        top: 0;
+        left: 100%;
+        margin-top: -8px;
+    }
+}
+/* ANIMACIJOS */
+/* ===== FLOATING CARDS ANIMATIONS ===== */
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #2a2a2a;
+  z-index: 10;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.floating-card i {
+  color: #6c63ff;
+  font-size: 1.2rem;
+}
+
+.card-1 {
+  top: -20px;
+  left: -20px;
+  animation: slideInFromTopLeft 1s ease-out 0.6s forwards;
+}
+
+.card-2 {
+  top: -20px;
+  right: -20px;
+  animation: slideInFromTopRight 1s ease-out 0.7s forwards;
+}
+
+.card-3 {
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slideInFromBottom 1s ease-out 0.8s forwards;
+}
+
+@keyframes slideInFromTopLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100px, -100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideInFromTopRight {
+  0% {
+    opacity: 0;
+    transform: translate(100px, -100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ===== SOCIAL ICONS ANIMATIONS ===== */
+.social-links {
+  position: relative;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  color: #6c63ff;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(100px);
+  animation-fill-mode: forwards;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.twitter:hover { background: #000000; color: white; }
+.facebook:hover { background: #3b5998; color: white; }
+.instagram:hover { background: #e4405f; color: white; }
+.google-plus:hover { background: #00aff0; color: white; }
+.linkedin:hover { background: #0077b5; color: white; }
+
+.social-links a:nth-child(1) { animation: slideUpFromBottom 0.6s ease-out 0.2s forwards; }
+.social-links a:nth-child(2) { animation: slideUpFromBottom 0.6s ease-out 0.3s forwards; }
+.social-links a:nth-child(3) { animation: slideUpFromBottom 0.6s ease-out 0.4s forwards; }
+.social-links a:nth-child(4) { animation: slideUpFromBottom 0.6s ease-out 0.5s forwards; }
+.social-links a:nth-child(5) { animation: slideUpFromBottom 0.6s ease-out 0.6s forwards; }
+
+@keyframes slideUpFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== PAGE PRE-LOADER ===== */
+.page-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f5f7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.page-preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pulsing-dots {
+  display: flex;
+  gap: 12px;
+}
+
+.pulsing-dots .dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6c63ff;
+  animation: pulse 1.5s ease-in-out infinite both;
+}
+
+.pulsing-dots .dot:nth-child(2) { animation-delay: 0.2s; }
+.pulsing-dots .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.loading-text {
+  margin-top: 20px;
+  color: #2a2a2a;
+  font-weight: 600;
+  text-align: center;
+}
